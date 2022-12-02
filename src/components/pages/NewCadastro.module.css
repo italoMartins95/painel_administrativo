@@ -1,0 +1,15 @@
+.newCadastros{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newCadastros > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+
+    margin: 25px 0;
+}

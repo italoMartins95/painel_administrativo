@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap');
+
+.clients{
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+
+    font-family: 'Open Sans';
+
+    overflow-y: auto;
+}
+
+.clientsTop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+
+    margin: 40px 0 30px 0;
+}
+
+.clientsTop > h1{
+    margin-left: 2.5%;
+
+    font-size: 35px;
+}
+
+.clientsTop .link{
+    margin-right: 2.5%;
+
+    color: white;
+    text-decoration: none;
+}
+
+.tableClientes{   
+    width: 95%;
+
+    border-collapse: collapse;
+}
+
+.tableClientes thead , th{
+    position: sticky;
+    top: 5px;
+
+    user-select: none;
+}
+
+.tableClientes th{
+    background-color: #35354e;
+    color: white;
+}
+
+.tableClientes th , tr{
+    height: 40px;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.tableClientes th, td, tr{
+    text-align: center;
+
+    cursor: pointer;
+}
+
+.tableClientes tr:hover{
+    background-color: rgba(103, 100, 131, 0.171);
+}
+
+.tableClientes tbody svg{
+    font-size: 20px;
+    margin: 0 10px;
+}

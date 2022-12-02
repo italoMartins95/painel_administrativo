@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap');
+
+.newProduct{
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+
+    width: 100vw;
+    height: 100vh;
+
+    font-family: 'Open Sans';
+}
+
+.newProduct h1{
+    height: 50px;
+
+    margin: 30px 0 30px 0;
+
+    font-size: 35px;
+    user-select: none;
+}
+
+.newProduct .labelId{
+    position: absolute;
+    left: 50px;
+
+    background-color: #010115c9;
+    color: white;
+
+    padding: 5px;
+}
+
+.newProduct label{
+    font-weight: bold;
+
+    margin-right: 10px;
+}
+
+.newProduct .topForm{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 10px 0;
+    padding: 0 20px;
+
+    border: none;
+}
+
+.newProduct .topForm > div{
+    width: 48%;
+}
+
+.newProduct .topForm > div:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    height: 100%;
+}
+
+.newProduct .topForm > div > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 10px 0;
+}
+
+.newProduct .bottomForm{
+    display: flex;
+    flex-direction: column;
+
+    margin: 30px 0;
+    padding: 0 20px;
+}
+
+.newProduct .bottomForm > div{
+    margin-bottom: 40px;
+}
+
+.newProduct .bottomForm textarea{
+    width: calc(100% - 20px);
+    height: 200px;
+
+    outline: none;
+    resize: vertical;
+
+    padding: 10px;
+    margin-top: 10px;
+
+    border: 1px solid black;
+    border-radius: 3px;
+} 
+
+.newProduct .formButtons{
+    display: flex;
+    justify-content: flex-end;
+
+    width: 100%;
+}
+
+.newProduct .formButtons button{
+    margin: 0 18px 0 0;
+}
+
+.newProduct .formButtons .link{
+    text-decoration: none;
+}

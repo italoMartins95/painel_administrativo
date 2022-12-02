@@ -1,0 +1,12 @@
+.input{
+    outline: none;
+    border: none;
+    border-bottom: 1.5px solid rgba(161, 158, 158, 0.688);
+
+    width: 80%;
+    height: 30px;
+
+    background-color: transparent;
+
+    font-size: 16px;
+}

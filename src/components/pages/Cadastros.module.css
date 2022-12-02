@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap');
+
+.cadastros{
+    position: relative;
+    
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: 'Open Sans';
+}
+
+.cadastros > h1{
+    width: calc(100% - 2.5%);
+    margin: 40px 0 30px 0;
+
+    margin-left: 2.5%;
+
+    font-size: 35px;
+}
+
+.cadastros ul{
+    width: 95%;
+    height: 42px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+
+    margin-bottom: 50px;
+    padding: 0;
+
+    background-color: #35354e;
+    color: white;
+
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.cadastros ul li{
+    display: inline-block;
+}
+
+.contentCadastros{
+    width: 95%;
+}
+
+.contentCadastros > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contentCadastros table{   
+    width: 100%;
+
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+.contentCadastros table thead , th{
+    position: sticky;
+    top: 5px;
+
+    user-select: none;
+}
+
+.contentCadastros table th{
+    background-color: #35354eba;
+    color: white;
+}
+
+.contentCadastros table tr:hover{
+    background-color: rgba(103, 100, 131, 0.171);
+}
+
+.contentCadastros table tbody svg{
+    font-size: 20px;
+    margin: 0 10px;
+}

@@ -1,0 +1,8 @@
+.select{
+    width: 160px;
+    height: 30px;
+
+    border: .5px solid #35354e;
+    border-radius: 3px;
+    outline: none;
+}
