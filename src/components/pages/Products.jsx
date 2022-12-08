@@ -1,20 +1,19 @@
 import styles from './Products.module.css'
 
-import {useState , useEffect} from 'react'
-import {Link , useLocation} from 'react-router-dom'
+import { ContextProducts } from '../contexts/ContextProducts'
+import { useEffect , useContext } from 'react'
+import { Link , useLocation } from 'react-router-dom'
 
-import {AiOutlinePlus} from 'react-icons/ai'
-import {MdOutlineModeEditOutline} from 'react-icons/md'
-import {BsTrash} from 'react-icons/bs'
+import { AiOutlinePlus } from 'react-icons/ai'
+import { MdOutlineModeEditOutline } from 'react-icons/md'
+import { BsTrash } from 'react-icons/bs'
 
 import Button from '../forms/Button'
 import Message from '../layouts/Message'
 
 function Products(){
 
-    const [products , setProducts] = useState()
-    const [mensagem , setMensagem] = useState({})
-
+    const {products , setProducts , actionProduct , mensagem , setMensagem} = useContext(ContextProducts)
     const location = useLocation()
 
     useEffect(() => {
@@ -26,24 +25,6 @@ function Products(){
         .then(response => response.json())
         .then(data => setProducts(data))
     } , [])
-
-    function actionProduct(id , action){
-        const operation = {id: id , action: action}
-
-        if(action == 'trash'){
-            fetch(`http://localhost:3001/produtos` , {
-                method: 'DELETE',
-                headers:{
-                    'Content-type':'application/json'
-                },
-                body: JSON.stringify(operation)
-            }).then(response => response.json())
-              .then(() => {
-                  setProducts(products.filter(product => product.idProduct != id))
-                  setMensagem({...mensagem, tipo: 'sucess' , msg: 'Produto deletado com sucesso'})
-              })
-        }        
-    }
 
     return(
         <section className={styles.products}>

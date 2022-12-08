@@ -1,6 +1,7 @@
 import styles from './NewProduct.module.css'
 
-import {useState , useEffect} from 'react'
+import { ContextProducts } from '../contexts/ContextProducts'
+import { useEffect, useContext } from 'react'
 import { Link , useNavigate } from 'react-router-dom'
 
 import Input from '../forms/Input'
@@ -9,9 +10,7 @@ import Select from '../forms//Select'
 
 function NewProduct(){
 
-    const [options , setOptions] = useState()
-    const [newProduct , setNewProduct] = useState({})
-
+    const {newProduct , setNewProduct , options , setOptions , submitNewProduct} = useContext(ContextProducts)
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -25,25 +24,6 @@ function NewProduct(){
             }
         })
     } , [])
-
-    function submitNewProduct(e){
-        e.preventDefault()
-
-        fetch(`http://localhost:3001/produtos` , {
-            method: 'POST',
-            headers:{
-                'Content-type':'application/json'
-            },
-            body: JSON.stringify(newProduct)
-        }).then(response => response.json())
-          .then(data => {
-              if(data.result == 'Ops, ocorreu um ERRO'){
-                  window.alert(data.msg)
-              }else if(data.result == 'Operation successfull'){
-                navigate('/produtos' , {state: `Produto cadastrado com sucesso`})
-              }
-          })
-    }
 
     return(
         <form className={styles.newProduct} onSubmit={submitNewProduct} id='teste'>

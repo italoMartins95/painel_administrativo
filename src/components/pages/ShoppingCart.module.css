@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap');
+
+.carrinho{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: 'Open Sans';
+}
+
+.btnCart{
+    position: absolute;
+    top: 70px;
+    right: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+    background-color: #35354e;
+    color: white;
+
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.qtdItens{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 15px;
+    height: 15px;
+
+    border: 2px solid #35354e;
+    border-radius: 50%;
+
+    font-size: 15px;
+    font-weight: bolder;
+
+    background-color: #35354e;
+    color: white;
+}
+
+.openCart{
+    top: 0;
+    right: 0;
+
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    width:  250px;
+    height: 100vh;
+
+    background-color: #35354e;
+    border-radius: 2px;
+
+    z-index: 2;
+}
+
+.openCart > svg{
+    margin: 30px 10px 50px 0;
+}
+
+.openCart div{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+.openCart span{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    font-size: 18px;
+
+    margin: 10px 0;
+    padding-left: 5px;
+}
+
+.openCart span svg{
+    margin-left: 8px;
+}
+
+.openCart button{
+    width: 60%;
+
+    background-color: white;
+    color: #35354e;
+
+    font-weight: bold;
+
+    margin: auto;
+    margin-top: 70px;
+
+    transition: .1s ease;
+}
+
+.openCart button:hover{
+    background-color: #35354e;
+    color: white;
+
+    border: 2px solid white;
+}
+
+.buscarProduto{
+    display: flex;
+    justify-content: space-between;
+
+    width: 60%;
+
+    margin: 20px;
+}
+
+.carrinho input{
+    width: 100%;
+    height: 37px;
+
+    border: 2px solid #35354e;
+    border-radius: 5px;
+
+    padding: 0 10px;
+}
+
+.listItens{
+    list-style: none;
+
+    padding: 0;
+
+    cursor: pointer;
+}
+
+.tableItens{
+    width: 95%;
+
+    border-collapse: collapse;
+}
+
+.tableItens thead , th{
+    position: sticky;
+    top: 5px;
+
+    user-select: none;
+}
+
+.tableItens th{
+    background-color: #35354e;
+    color: white;
+}
+
+.tableItens th , tr{
+    height: 40px;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.tableItens th, td, tr{
+    text-align: center;
+
+    cursor: pointer;
+}
+
+.tableItens tr:hover{
+    background-color: rgba(103, 100, 131, 0.171);
+}

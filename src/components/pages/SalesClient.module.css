@@ -1,0 +1,94 @@
+.vendaClient{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.voltarCarrinho{
+    position: absolute;
+    top: 70px;
+    right: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+    background-color: #35354e;
+    color: white;
+
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.qtdItens{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 15px;
+    height: 15px;
+
+    border: 2px solid #35354e;
+    border-radius: 50%;
+
+    font-size: 15px;
+    font-weight: bolder;
+
+    background-color: #35354e;
+    color: white;
+}
+
+.vendaClient input{
+    width: 60%;
+    height: 37px;
+
+    border: 2px solid #35354e;
+    border-radius: 5px;
+
+    margin: 20px;
+    padding: 0 10px;
+}
+
+.tableClientes{
+    width: 95%;
+
+    border-collapse: collapse;
+}
+
+.tableClientes thead , th{
+    position: sticky;
+    top: 5px;
+
+    user-select: none;
+}
+
+.tableClientes th{
+    background-color: #35354e;
+    color: white;
+}
+
+.tableClientes th , tr{
+    height: 40px;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.tableClientes th, td, tr{
+    text-align: center;
+
+    cursor: pointer;
+}
+
+.tableClientes tr:hover{
+    background-color: rgba(103, 100, 131, 0.171);
+}

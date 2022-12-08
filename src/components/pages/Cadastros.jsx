@@ -3,9 +3,9 @@ import styles from './Cadastros.module.css'
 import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 
-import {AiOutlinePlus} from 'react-icons/ai'
-import {MdOutlineModeEditOutline} from 'react-icons/md'
-import {BsTrash} from 'react-icons/bs'
+import { AiOutlinePlus } from 'react-icons/ai'
+import { MdOutlineModeEditOutline } from 'react-icons/md'
+import { BsTrash } from 'react-icons/bs'
 
 import Message from '../layouts/Message'
 import Button from '../forms/Button'

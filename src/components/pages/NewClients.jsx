@@ -1,38 +1,15 @@
 import styles from './NewClients.module.css'
 
-import {useState , useEffect} from 'react'
-import { Link , useNavigate } from 'react-router-dom'
+import { useContext } from 'react'
+import { ContextClients } from '../contexts/ContextClients'
+import { Link } from 'react-router-dom'
 
 import Input from '../forms/Input'
 import Button from '../forms/Button'
 
 function NewClients(){
 
-    const [newClient , setNewClient] = useState({})
-
-    const navigate = useNavigate()
-
-    function submitNewClient(e){
-        e.preventDefault()
-
-        fetch(`http://localhost:3001/clientes` , {
-            method: 'POST',
-            headers:{
-                'Content-type':'application/json'
-            },
-            body: JSON.stringify(newClient)
-        }).then(response => response.json())
-            .then(data => {
-              if(data.result == 'Ops, ocorreu um ERRO'){
-                  window.alert(data.msg)
-              }else if(data.result == 'Operation successfull'){
-                navigate('/clientes' , {state: 'Cliente cadastrado com sucesso!'})
-              }else{
-                  console.log(data)
-            }
-    })
-    
-    }
+    const {newClient , setNewClient , submitNewClient} = useContext(ContextClients)  
 
     function buscarCep(cep){  
         if(cep.length == 8){

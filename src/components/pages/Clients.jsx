@@ -1,19 +1,19 @@
 import styles from './Clients.module.css'
 
-import {useState , useEffect} from 'react'
-import {Link , useLocation} from 'react-router-dom'
+import { ContextClients } from '../contexts/ContextClients'
+import { useEffect, useContext } from 'react'
+import { Link , useLocation } from 'react-router-dom'
 
-import {AiOutlinePlus} from 'react-icons/ai'
-import {MdOutlineModeEditOutline} from 'react-icons/md'
-import {BsTrash} from 'react-icons/bs'
+import { AiOutlinePlus } from 'react-icons/ai'
+import { MdOutlineModeEditOutline } from 'react-icons/md'
+import { BsTrash } from 'react-icons/bs'
 
 import Button from '../forms/Button'
 import Message from '../layouts/Message'
 
 function Clients(){
 
-    const [clients , setClients] = useState()
-    const [mensagem , setMensagem] = useState({})
+    const {clients , setClients , actionClient , mensagem , setMensagem} = useContext(ContextClients)
 
     const location = useLocation()
     
@@ -26,25 +26,6 @@ function Clients(){
         .then(response => response.json())
         .then(data => setClients(data))
     } , [])
-
-    function actionClient(id , action){
-        const operation = {id: id , action: action}
-        setMensagem({})
-
-        if(action == 'trash'){
-            fetch(`http://localhost:3001/clientes` , {
-                method: 'DELETE',
-                headers:{
-                    'Content-type':'application/json'
-                },
-                body: JSON.stringify(operation)
-            }).then(response => response.json())
-              .then((data) => {
-                    setClients(clients.filter(clients => clients.idClient != id))
-                    setMensagem({...mensagem, tipo: 'sucess' , msg: 'Cliente deletado com sucesso'})
-              })
-        }
-    }
 
     return(
         <section className={styles.clients}> 
