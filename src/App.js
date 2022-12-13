@@ -2,6 +2,13 @@ import './App.css';
 
 import {BrowserRouter as Router, Routes, Route , Navigate} from 'react-router-dom'
 
+import { useContext } from 'react';
+import { ContextLoggin } from './components/contexts/ContextLoggin'
+import { UseContextSales } from './components/contexts/ContextSales'
+import { UseContextClients } from './components/contexts/ContextClients'
+import { UseContextProducts } from './components/contexts/ContextProducts'
+
+
 import Loggin from './components/layouts/Loggin'
 import NavBar from './components/layouts/NavBar'
 import Conteiner from './components/layouts/Conteiner'
@@ -11,12 +18,8 @@ import Clients from './components/pages/Clients'
 import NewClients from './components/pages/NewClients'
 import Cadastros from './components/pages/Cadastros'
 import Sales from './components/pages/Sales'
-
-import { useContext } from 'react';
-import { ContextLoggin } from './components/contexts/ContextLoggin'
-import { UseContextSales } from './components/contexts/ContextSales'
-import { UseContextClients } from './components/contexts/ContextClients'
-import { UseContextProducts } from './components/contexts/ContextProducts'
+import ShoppingCart from './components/pages/MakeSales'
+import RevisaoSales from './components/pages/RevisaoSales'
 
 function App() {
 
@@ -43,6 +46,7 @@ function App() {
                           <Route path='/cadastro-cliente' element={<NewClients />} />
                           <Route path='/cadastros' element={<Cadastros />} />                    
                           <Route path='/vendas' element={<Sales />} />
+                          <Route path='vendas/shoppingCart' element={<ShoppingCart />} />
                         </Routes>
                       </UseContextProducts>
                     </UseContextClients>

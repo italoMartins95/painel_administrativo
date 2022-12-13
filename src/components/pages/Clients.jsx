@@ -4,7 +4,6 @@ import { ContextClients } from '../contexts/ContextClients'
 import { useEffect, useContext } from 'react'
 import { Link , useLocation } from 'react-router-dom'
 
-import { AiOutlinePlus } from 'react-icons/ai'
 import { MdOutlineModeEditOutline } from 'react-icons/md'
 import { BsTrash } from 'react-icons/bs'
 
@@ -33,9 +32,7 @@ function Clients(){
             <div className={styles.clientsTop}>
                 <h1>Clientes</h1>
                 <Link to='/cadastro-cliente' className={styles.link}>
-                    <Button txtButon='novo'>
-                        <AiOutlinePlus />
-                    </Button>
+                    <Button txtButon='novo cliente' />
                 </Link>
             </div>
             <table className={styles.tableClientes}>

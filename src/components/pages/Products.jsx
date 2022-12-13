@@ -4,7 +4,6 @@ import { ContextProducts } from '../contexts/ContextProducts'
 import { useEffect , useContext } from 'react'
 import { Link , useLocation } from 'react-router-dom'
 
-import { AiOutlinePlus } from 'react-icons/ai'
 import { MdOutlineModeEditOutline } from 'react-icons/md'
 import { BsTrash } from 'react-icons/bs'
 
@@ -32,9 +31,7 @@ function Products(){
             <div className={styles.productsTop}>
                 <h1>Produtos</h1>
                 <Link to='/cadastro-produto' className={styles.link}>
-                    <Button txtButon='novo'>
-                        <AiOutlinePlus />
-                    </Button>
+                    <Button txtButon='novo produto' />
                 </Link>
             </div>
             <table className={styles.tableProducts}>

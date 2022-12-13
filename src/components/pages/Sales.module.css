@@ -12,104 +12,20 @@
     font-family: 'Open Sans';
 }
 
-.vendas > h1{
+.vendasTop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     width: calc(100% - 2.5%);
     margin: 40px 0 30px 0;
 
     margin-left: 2.5%;
 
-    font-size: 35px;
+    font-size: 24px;
 }
 
-.revisaoPedido{
-    width: calc(100% - 2.5%);
-
-    padding-left: 2.5%;
+.link{
+    text-decoration: none;
+    margin-right: 2.5%;
 }
-
-.revisaoPedido h2{
-    margin-bottom: 30px;
-}
-
-.caixaDadosCliente{
-    display: flex;
-    align-items: center;
-
-    margin: 20px 0;
-}
-
-
-.nameCliente , .cpfCliente , .telefoneCliente , .emailCliente{
-    position: relative;
-
-    display: flex;
-    align-items: center;
-
-    width: 40%;
-    height: 35px;
-   
-    border: 2px solid #35354e;
-    border-radius: 5px;
-
-    padding-left: 10px;
-    font-size: 17px;
-}
-
-.nameCliente span , .cpfCliente span , .telefoneCliente span , .emailCliente span{
-   position: absolute;
-   top: -15px;
-   left: 10px;
-   
-   background-color: white;
-   padding: 0px 5px;
-
-   font-size: 13px;
-}
-
-.cpfCliente{
-    width: 30%;
-
-    margin: 0 20px;
-}
-
-.telefoneCliente{
-    width: 25%;
-
-    margin-right: 20px;
-}
-
-.revisaoProdutos p{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    width: 72%;
-    height: 35px;
-
-    border: 2px solid #35354e;
-    border-radius: 5px;
-
-    margin: 10px 0;
-    padding: 0 10px;
-}
-
-.somaItens{
-    font-weight: bolder !important;
-
-    background-color: #35354e;
-    color: white;
-}
-
-.buttons{
-    display: flex;
-    align-items: center;
-
-    width: 100%;
-
-    margin: 50px 0;
-}
-
-.buttons button{
-    margin-right: 10px;
-}
-

@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap');
+
+.revisaoPedido{
+    position: relative;
+    top: 150px;
+
+    display: flex;
+    justify-content: center;
+
+    width: 95%;
+
+    padding: 15px;
+
+    font-family: 'Open Sans';
+}
+
+.revisaoPedido h1 , h2{
+    margin: 30px 0;
+}
+
+.informacoesPrincipais{
+    width: 45%;
+    height: 475px;
+
+    border: 2px solid #35354e;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.caixaDadosCliente{
+    display: flex;
+    align-items: center;
+
+    margin: 20px 0;
+}
+
+.nameCliente , .cpfCliente , .telefoneCliente , .emailCliente{
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    width: 400px;
+    height: 35px;
+   
+    border: 2px solid #35354e;
+    border-radius: 5px;
+
+    padding-left: 10px;
+    font-size: 17px;
+}
+
+.nameCliente span , .cpfCliente span , .telefoneCliente span , .emailCliente span{
+   position: absolute;
+   top: -15px;
+   left: 10px;
+   
+   background-color: white;
+   padding: 0px 5px;
+
+   font-size: 13px;
+}
+
+.cpfCliente{
+    width: 200px;
+
+    margin-left: 20px;
+}
+
+.telefoneCliente{
+    width: 145px;
+
+    margin-right: 20px;
+}
+
+.emailCliente{
+    width: 250px;
+}
+
+.listaProdutos{
+    height: 210px;
+
+    overflow-y: scroll;
+}
+
+.revisaoProdutos h2{
+    margin: 20px 0 10px 0;
+}
+
+.revisaoProdutos p{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 35px;
+
+    border: 2px solid #35354e;
+    border-radius: 5px;
+
+    margin: 10px 0;
+    padding: 0 10px;
+}
+
+.somaItens{
+    font-weight: bolder !important;
+
+    background-color: #35354e;
+    color: white;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    margin: 10px 0;
+}
+
+.buttons button{
+    margin: 10px;
+}
+
+.informacoesAdicionais{
+    display: flex;
+    flex-direction: column;
+
+    width: 35%;
+    height: 475px;
+
+    border: 2px solid #35354e;
+    border-radius: 10px;
+
+    margin-left: 25px;
+    padding: 15px;
+}
+
+.informacoesAdicionais h2{
+    margin: 0;
+}
+
+.formaPagamento{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 20px 0;
+}
+
+.formaPagamento select{
+    width: 160px;
+    height: 30px;
+
+    border: .5px solid #35354e;
+    border-radius: 3px;
+    outline: none;
+}
+
+.desconto{
+    display: flex;
+    flex-direction: column;
+
+    margin: 30px 0;
+}
+
+.desconto > div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.desconto button{
+    display: inline;
+    margin-left: 20px;
+}
+
+.valorDesconto{
+    display: none !important;
+
+    justify-content: center !important;
+    align-items: center !important;
+
+    margin-top: 20px;
+}
+
+.exibirValorDesconto{
+    display: flex !important;
+}
+
+.valorDesconto select{
+    width: 160px;
+    height: 30px;
+
+    border: .5px solid #35354e;
+    border-radius: 3px;
+    outline: none;
+
+    margin: 0 10px;
+}
+
+.comentarioVenda textarea{
+    width: calc(98% - 10px);
+    height: 110px;
+
+    margin: 10px 0;
+
+    outline: none;
+
+    padding: 10px;
+
+    resize: none;
+}
