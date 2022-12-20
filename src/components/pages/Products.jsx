@@ -48,7 +48,7 @@ function Products(){
                 </thead>
                 <tbody>
                     {
-                        products &&
+                        products ?
                             products.map( (el , index) => 
                                 <tr key={index}>
                                     <td>{el.idProduct}</td>
@@ -62,7 +62,10 @@ function Products(){
                                         <BsTrash onClick={(e) => actionProduct(el.idProduct , 'trash')}/>
                                     </td>
                                 </tr>
-                            )
+                            ) :
+                            <>
+                                Sem conexão com o servidor...
+                            </>
                     }
                 </tbody>
             </table>

@@ -23,9 +23,13 @@ export const UseContextProducts = ({children}) => {
                 },
                 body: JSON.stringify(operation)
             }).then(response => response.json())
-              .then(() => {
-                  setProducts(products.filter(product => product.idProduct != id))
-                  setMensagem({...mensagem, tipo: 'sucess' , msg: 'Produto deletado com sucesso'})
+              .then((data) => {
+                  if(data.rst == undefined){
+                    setMensagem({...mensagem, tipo: 'error' , msg: 'Não foi possível deletar o produto!'})
+                  }else{
+                    setProducts(products.filter(product => product.idProduct != id))
+                    setMensagem({...mensagem, tipo: 'sucess' , msg: 'Produto deletado com sucesso'})
+                  }
               })
         }        
     }

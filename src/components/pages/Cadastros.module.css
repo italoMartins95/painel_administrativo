@@ -21,30 +21,28 @@
     font-size: 35px;
 }
 
-.cadastros ul{
+.tableCadastro{  
+    position: sticky;
+    top: 120px;
+
     width: 95%;
-    height: 42px;
 
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    cursor: pointer;
-    list-style: none;
+    border-collapse: collapse;
     user-select: none;
 
-    margin-bottom: 50px;
-    padding: 0;
-
-    background-color: #35354e;
+    background-color: #35354eba;
     color: white;
 
-    font-weight: bold;
-    font-size: 17px;
+    margin-bottom: 50px;
 }
 
-.cadastros ul li{
-    display: inline-block;
+.tableCadastro th{
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+}
+
+.categoria , .usuario , .entradaMaterial{
+    background-color: #35354e;
 }
 
 .contentCadastros{
@@ -72,7 +70,7 @@
 }
 
 .contentCadastros table th{
-    background-color: #35354eba;
+    background-color: #35354e;
     color: white;
 }
 

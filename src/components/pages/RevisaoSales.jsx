@@ -110,7 +110,10 @@ function RevisaoSales({redefinirVenda}){
                                                 voltar()
                             }}/>
                     <Button txtButon='Finalizar venda'
-                                handleSubmit={fecharVenda}
+                                handleSubmit={() => {
+                                                fecharVenda()
+                                                cleanSale()
+                                }}
                     />
                 </div>
             </div>

@@ -13,6 +13,15 @@
     font-family: 'Open Sans';
 }
 
+.loggin h1{
+    width: 393px;
+
+    background-color: #35354e;
+    color: white;
+
+    padding: 5px 10px;
+}
+
 .loggin div{
     margin: 20px 0;
 }

@@ -13,7 +13,7 @@ import NewCadastro from './NewCadastro'
 
 function Cadastros(){
 
-    const [cadastroCategoria , setCadastroCategoria] = useState(true)
+    const [cadastro , setCadastro] = useState('categoria')
     const [categorias , setCategorias] = useState()
     const [usuarios , setUsuarios] = useState()
 
@@ -89,19 +89,16 @@ function Cadastros(){
         <section className={styles.cadastros}>
             {mensagem && <Message type={mensagem.tipo} msg={mensagem.msg}/>}
             <h1>Cadastros</h1>
-           <ul>
-               <li onClick={(e) => {setCadastroCategoria(true)
-                                    setTelaCadastro(false)
-                                    }}>categorias</li>
-               <li onClick={(e) => {setCadastroCategoria(false) 
-                                    setTelaCadastro(false)}}>usuários</li>
-               <li>
-                   entrada material
-               </li>
-           </ul>
+            <table className={styles.tableCadastro}>
+                <tr>
+                    <th className={cadastro == 'categoria' ? styles.categoria : null} onClick={(e) => {setCadastro('categoria')}}>categorias</th>
+                    <th className={cadastro == 'usuario' ? styles.categoria : null} onClick={(e) => {setCadastro('usuario')}}>usuários</th>
+                    <th className={cadastro == 'entradaMaterial' ? styles.entradaMaterial : null} onClick={(e) => {setCadastro('entradaMaterial')}}>entrada material</th>
+                </tr>
+            </table>
            <div className={styles.contentCadastros}>
             {
-                cadastroCategoria ? 
+                cadastro == 'categoria' ? 
                     <> 
                         <div>
                             <h3>Categorias</h3>
@@ -125,7 +122,7 @@ function Cadastros(){
                                 </thead>
                                 <tbody>
                                     {
-                                        categorias &&
+                                        categorias ?
                                         categorias.map( (el , index) => 
                                                 <tr key={index}>
                                                     <td>{el.idCategory}</td>
@@ -135,12 +132,15 @@ function Cadastros(){
                                                         <BsTrash onClick={(e) => {actionCategorys(el.idCategory , 'trash')}}/>
                                                     </td>
                                                 </tr>
-                                        )
+                                        ) :
+                                        <>
+                                            Sem conexão com o servidor...
+                                        </>
                                     }
                                 </tbody>
                             </table> 
                         }
-                    </> : 
+                    </> : cadastro == 'usuario' ?
                     <>
                         <div>
                             <h3>Usuários</h3>
@@ -167,7 +167,7 @@ function Cadastros(){
                                     </thead>
                                     <tbody>
                                         {
-                                            usuarios.length > 0 &&
+                                            usuarios ?
                                             usuarios.map( (el , index) => 
                                                     <tr key={index}>
                                                         <td>{el.idUsers}</td>
@@ -180,11 +180,17 @@ function Cadastros(){
                                                             <BsTrash onClick={(e) => {actionUsuarios(el.idUsers , 'trash')}}/>
                                                         </td>
                                                     </tr>
-                                            )
+                                            ) : 
+                                            <>
+                                                Sem conexão com o servidor...
+                                            </>
                                         }
                                     </tbody>
                                 </table>
                         }                    
+                    </> : 
+                    <>
+                        <p>Em desenvolvimento...</p>
                     </>
             }
            </div>

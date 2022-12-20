@@ -48,20 +48,23 @@ function Clients(){
                 </thead>
                 <tbody>
                     {
-                        clients &&
-                        clients.map( (el , index) => 
-                                <tr key={index}>
-                                    <td>{el.idClient}</td>
-                                    <td>{el.name}</td>
-                                    <td>{el.cpf_cnpj}</td>
-                                    <td>{el.phone}</td>
-                                    <td>{el.email}</td>
-                                    <td>
-                                        <MdOutlineModeEditOutline />
-                                        <BsTrash onClick={(e) => actionClient(el.idClient , 'trash')}/>
-                                    </td>
-                                </tr>
-                            )
+                        clients ?
+                            clients.map( (el , index) => 
+                                    <tr key={index}>
+                                        <td>{el.idClient}</td>
+                                        <td>{el.name}</td>
+                                        <td>{el.cpf_cnpj}</td>
+                                        <td>{el.phone}</td>
+                                        <td>{el.email}</td>
+                                        <td>
+                                            <MdOutlineModeEditOutline />
+                                            <BsTrash onClick={(e) => actionClient(el.idClient , 'trash')}/>
+                                        </td>
+                                    </tr>
+                                ) :
+                                <>
+                                    Sem conexão com o servidor...
+                                </>
                     }
                 </tbody>
             </table>

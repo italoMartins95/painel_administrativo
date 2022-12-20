@@ -91,9 +91,7 @@ export const UseContextSales = ({children}) => {
     }
 
     function fecharVenda(){
-
-        console.log(shoppingCart)
-
+        
         fetch(`http://localhost:3001/venda` , {
             method: 'POST',
             headers:{

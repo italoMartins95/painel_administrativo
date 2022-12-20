@@ -9,11 +9,17 @@ import Message from '../layouts/Message'
 
 function Sales(){
 
+    const [vendas , setVendas] = useState()
+
     const {mensagem , setMensagem} = useContext(ContextSales)
     const location = useLocation()
 
     useEffect(() => {
         setMensagem({...mensagem, tipo: 'sucess' , msg: location.state})
+
+        fetch('http://localhost:3001/venda')
+        .then(response => response.json())
+        .then(data => setVendas(data))
     } , [location])
 
     return(
@@ -25,20 +31,34 @@ function Sales(){
                     <Button txtButon='Nova venda' />
                 </Link>
             </div>  
-            <div>
-                <table>
-                    <thead>
-                        <tr>
-
+            <table className={styles.tabelaVendas}>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Forma de pagamento</th>
+                        <th>Cliente</th>
+                        <th>Valor</th>
+                        <th>Itens</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {
+                    vendas ?
+                    vendas.map((venda , index) => 
+                        <tr key={index}>
+                            <td>{venda.date}</td>
+                            <td>{venda.paymentForm}</td>
+                            <td>{venda.name}</td>
+                            <td>{venda.price}</td>
+                            <td>itens</td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            
-                        </tr>
-                    </tbody>
-                </table>
-            </div>          
+                    ) :
+                    <>
+                        Sem conexão com o servidor...
+                    </>
+                    }
+                </tbody>
+            </table>        
         </section>
     )
 }

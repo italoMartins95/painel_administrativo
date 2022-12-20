@@ -94,8 +94,8 @@ function MakeSales(){
                 <thead>
                     <tr>
                         <th className={stepsSales == 'stepOne' ? styles.stepOne : null}>Escolha o cliente</th>
-                        <th className={stepsSales == 'stepTwo' ? styles.stepTwo : null}>Adicione produtos no carrinho</th>
-                        <th className={stepsSales == 'stepThree' ? styles.stepThree : null}>Revisão e complementos</th>
+                        <th className={stepsSales == 'stepTwo' ? styles.stepTwo : null}>Adicione produtos</th>
+                        <th className={stepsSales == 'stepThree' ? styles.stepThree : null}>Revisão</th>
                         <th>
                             <Link className={styles.voltarVendas} to='/vendas'>
                                 <Button txtButon='Voltar' />
@@ -114,7 +114,7 @@ function MakeSales(){
                                }}                           
                         />
                         {
-                            client &&
+                            client ?
                             <table className={styles.tableClientes}>
                                 <thead>
                                     <tr>
@@ -140,7 +140,10 @@ function MakeSales(){
                                         )
                                     }
                                 </tbody>
-                            </table>
+                            </table> :
+                            <>
+                                Sem conexão com o servidor...
+                            </>
                         }
                     </section>
                 : stepsSales == 'stepTwo' ?
@@ -205,7 +208,7 @@ function MakeSales(){
                         }
                     </section>
                     : 
-                    <RevisaoSales />
+                    <RevisaoSales redefinirVenda={() => setStepsSales('stepOne')}/>
             }        
         </section>
     )
